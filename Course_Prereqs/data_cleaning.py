@@ -1,9 +1,10 @@
 import pandas as pd
 import numpy as np
 import math
+import json
 
 #Method 1: Getting the frequency of every word in the prerequisite category and counting it's frequencies
-df = pd.read_csv('2019-2020_Courses.csv')
+df = pd.read_csv('2023-2024_Courses.csv')
 
 prereq_word_frequency = {}
 
@@ -55,3 +56,36 @@ for term in df.values:
                     previous_prereq_array.append(prereq)
                     course_and_prereqs[course] = previous_prereq_array
 
+
+################################################################Preparing the major courses into a csv file#############################################
+                    
+#Reading the required courses file
+new_file = pd.read_csv("Computer Science.csv") #This will be any major you want
+courses_required = []
+
+
+#Appending the csv file data to an arrary
+for term in new_file.values:
+    courses_required.append(term[0])
+
+#Removing this course that is in every major
+courses_required.remove('CPU 3003')
+finaljson = []
+
+#Only including courses in the prereqs that are major required
+for course in courses_required:
+    former_prereqs = course_and_prereqs[course]
+    updated_prereqs = []
+    for term in former_prereqs:
+        if term in courses_required:
+            updated_prereqs.append(term)
+    finaljson.append({
+        "courseID": course,
+        "PreReqs": updated_prereqs
+    })
+
+file_path = "course.json"
+
+# Write the data to the JSON file
+with open(file_path, "w") as json_file:
+    json.dump(finaljson, json_file)
