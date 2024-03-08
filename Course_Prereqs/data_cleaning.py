@@ -60,7 +60,7 @@ for term in df.values:
 ################################################################Preparing the major courses into a csv file#############################################
                     
 #Reading the required courses file
-new_file = pd.read_csv("ComputerSc.csv") #This will be any major you want
+new_file = pd.read_csv("18BusinessAd.csv") #This will be any major you want
 courses_required = []
 
 

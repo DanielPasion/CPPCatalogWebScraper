@@ -18,7 +18,7 @@ def find_major_required(yearstring,iteration,major,catalog_url):
         major_required_array.append(spliced_text[0] + " " + spliced_text[1])
         
     browser.quit()
-    csv_file = yearstring + "RequiredCourses/" + str(iteration) + major.replace(" ", "")[:10] + '.csv'
+    csv_file = "RequiredCourses/" + yearstring + "RequiredCourses/" + str(iteration) + major.replace(" ", "")[:10] + '.csv'
 
     # Reshape the 1D array into a 2D array with one column
     data_2d = [[item] for item in major_required_array]
@@ -52,6 +52,12 @@ browser = webdriver.Chrome()
 # year2021 ='https://catalog.cpp.edu/content.php?catoid=53&navoid=3972'
 # yearstring = '20-21'
 # browser.get(year2021)
+
+year1920 ='https://catalog.cpp.edu/content.php?catoid=53&navoid=3972'
+yearstring = '19-20'
+browser.get(year1920)
+
+
 for i in range(1,120): #2324 = 109, 2223 = 108, 2122 = 104, 2021 = 104
     current = browser.find_elements(By.XPATH, '//*[@id="main"]/div/table/tbody/tr[2]/td[2]/table/tbody/tr/td/ul[1]/li[' + str(i) + ']/a')
     
