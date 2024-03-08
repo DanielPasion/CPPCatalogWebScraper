@@ -60,7 +60,7 @@ for term in df.values:
 ################################################################Preparing the major courses into a csv file#############################################
                     
 #Reading the required courses file
-new_file = pd.read_csv("Computer Science.csv") #This will be any major you want
+new_file = pd.read_csv("ComputerSc.csv") #This will be any major you want
 courses_required = []
 
 
@@ -89,3 +89,4 @@ file_path = "course.json"
 # Write the data to the JSON file
 with open(file_path, "w") as json_file:
     json.dump(finaljson, json_file)
+
