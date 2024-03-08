@@ -2,11 +2,10 @@ import pandas as pd
 import numpy as np
 import math
 import json
+import re
 
-#Method 1: Getting the frequency of every word in the prerequisite category and counting it's frequencies
-df = pd.read_csv('2023-2024_Courses.csv')
-
-prereq_word_frequency = {}
+#Reading the file
+df = pd.read_csv('Course_Prereqs/2023-2024_Courses.csv')
 
 #Parsing the data to get the list of all courses + all the major department acronyms
 
@@ -48,10 +47,13 @@ for term in df.values:
             if string_split[i] in list_of_major_acronyms:
 
                 #Formatting to this format: CS 1738
-                prereq = string_split[i] + " " + string_split[i+1]
+                course_number = string_split[i+1]
+                sanitzied_course_number = re.sub(r'\D', '', course_number)
+
+                prereq = string_split[i] + " " + sanitzied_course_number
 
                 #Checking if it is a current course and not an old course
-                if prereq in list_of_courses:
+                if prereq in list_of_courses and prereq not in course_and_prereqs[course]:
                     previous_prereq_array = course_and_prereqs[course]
                     previous_prereq_array.append(prereq)
                     course_and_prereqs[course] = previous_prereq_array
@@ -60,7 +62,7 @@ for term in df.values:
 ################################################################Preparing the major courses into a csv file#############################################
                     
 #Reading the required courses file
-new_file = pd.read_csv("18BusinessAd.csv") #This will be any major you want
+new_file = pd.read_csv("RequiredCourses/23-24RequiredCourses/77Mathematic.csv") #This will be any major you want
 courses_required = []
 
 
