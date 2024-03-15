@@ -14,7 +14,6 @@ import ReactFlow, {
 } from "reactflow";
 
 import "reactflow/dist/style.css";
-
 const elk = new ELK();
 //const fs = require("fs");
 
@@ -64,9 +63,8 @@ const getLayoutedElements = (nodes, edges, options = {}) => {
 };
 
 function LayoutFlow() {
-  const jsonData = [{"courseID": "BIO 1110", "PreReqs": []}, {"courseID": "BIO 1110L", "PreReqs": []}, {"courseID": "CS 1300", "PreReqs": ["MAT 1140", "MAT 1150"]}, {"courseID": "CS 1400", "PreReqs": ["MAT 1140", "MAT 1150"]}, {"courseID": "CS 2400", "PreReqs": ["CS 1400", "CS 1300", "MAT 1140", "MAT 1150"]}, {"courseID": "CS 2600", "PreReqs": ["CS 1400"]}, {"courseID": "CS 2610", "PreReqs": ["CS 2600"]}, {"courseID": "CS 2640", "PreReqs": ["CS 1300", "CS 1400"]}, {"courseID": "CS 3010", "PreReqs": ["CS 2400", "MAT 1150"]}, {"courseID": "CS 3110", "PreReqs": ["CS 2400"]}, {"courseID": "CS 3310", "PreReqs": ["CS 2400", "STA 2260"]}, {"courseID": "CS 3560", "PreReqs": ["CS 2400"]}, {"courseID": "CS 3650", "PreReqs": ["CS 2640"]}, {"courseID": "CS 3750", "PreReqs": []}, {"courseID": "CS 4080", "PreReqs": ["CS 3110", "CS 2640"]}, {"courseID": "CS 4310", "PreReqs": ["CS 3650", "STA 2260"]}, {"courseID": "CS 4630", "PreReqs": []}, {"courseID": "CS 4800", "PreReqs": ["CS 2400"]}, {"courseID": "MAT 1140", "PreReqs": []}, {"courseID": "MAT 1150", "PreReqs": ["MAT 1140"]}, {"courseID": "PHY 1510", "PreReqs": ["MAT 1140", "MAT 1150"]}, {"courseID": "PHY 1510L", "PreReqs": []}, {"courseID": "STA 2260", "PreReqs": ["MAT 1150"]}, {"courseID": "CS 3520", "PreReqs": ["CS 2400"]}, {"courseID": "CS 3700", "PreReqs": ["CS 3310"]}, {"courseID": "CS 3800", "PreReqs": ["CS 2400", "CS 2640"]}, {"courseID": "CS 4110", "PreReqs": ["CS 3110"]}, {"courseID": "CS 4200", "PreReqs": ["CS 2400", "CS 2410"]}, {"courseID": "CS 4210", "PreReqs": ["CS 2410", "CS 3010"]}, {"courseID": "CS 4230", "PreReqs": ["CS 2400", "CS 2410"]}, {"courseID": "CS 4250", "PreReqs": ["CS 2410", "CS 2400"]}, {"courseID": "CS 4350", "PreReqs": ["CS 2400", "CS 2410"]}, {"courseID": "CS 4450", "PreReqs": ["CS 2400", "CS 2560"]}, {"courseID": "CS 4500", "PreReqs": ["CS 3110"]}, {"courseID": "CS 4600", "PreReqs": ["CS 2400"]}, {"courseID": "CS 4640", "PreReqs": ["CS 2400"]}, {"courseID": "CS 4650", "PreReqs": ["CS 2400", "CS 2410"]}, {"courseID": "CS 4660", "PreReqs": ["CS 2400"]}, {"courseID": "CS 4670", "PreReqs": ["CS 2400"]}, {"courseID": "CS 4700", "PreReqs": ["CS 2400"]}, {"courseID": "CS 4750", "PreReqs": ["CS 2400"]}, {"courseID": "CS 4810", "PreReqs": ["CS 4350", "CS 4800"]}, {"courseID": "CS 4990", "PreReqs": []}, {"courseID": "CS 2250", "PreReqs": ["CS 1400"]}, {"courseID": "CS 2410", "PreReqs": []}, {"courseID": "CS 2450", "PreReqs": ["CS 1400"]}, {"courseID": "CS 2520", "PreReqs": ["CS 1400"]}, {"courseID": "CS 2560", "PreReqs": ["CS 1400"]}, {"courseID": "CS 2990", "PreReqs": []}, {"courseID": "CS 2000", "PreReqs": []}, {"courseID": "CS 4000", "PreReqs": []}, {"courseID": "CS 4410", "PreReqs": []}, {"courseID": "CS 4610", "PreReqs": []}, {"courseID": "CS 4620", "PreReqs": []}, {"courseID": "CS 4820", "PreReqs": ["CS 2400", "CS 2410"]}]
-  
-
+  const jsonData = jsonMajors['"Aerospace Engineering, B.S.: 127 units"']
+  console.log(jsonData)
   const initialNodes = [];
   const initialEdges = [];
   // console.log(const course[0] in jsonData)
