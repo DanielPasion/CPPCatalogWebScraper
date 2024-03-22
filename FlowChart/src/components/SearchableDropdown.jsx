@@ -45,7 +45,7 @@ const SearchableDropdown = ({
       <div className="control">
         <div className="selected-value">
           <input
-            placeholder="Search for major..."
+            placeholder="Search For Major..."
             ref={inputRef}
             type="text"
             value={getDisplayValue()}

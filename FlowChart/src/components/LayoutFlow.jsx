@@ -72,10 +72,11 @@ const getLayoutedElements = (nodes, edges, options = {}) => {
         const { fitView } = useReactFlow();
         
         useEffect(() => {
-            const jsonData = prereqs(props.major);
+            try{const jsonData = prereqs(props.major);
             const initialNodes = [];
             const initialEdges = [];
             
+            console.log(jsonData)
             jsonData.forEach((course) => {
                 const nodeId = course.courseID;
                 const nodeData = { label: course.courseID };
@@ -113,6 +114,10 @@ const getLayoutedElements = (nodes, edges, options = {}) => {
             };
     
             onLayout({ direction: "DOWN" });
+        }
+        catch{
+            console.log("User is currently typing")
+        }
     
         }, [props.major, setNodes, setEdges, fitView]);
     

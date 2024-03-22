@@ -9,8 +9,16 @@ export function preandcoreqs(major){
 export function allmajors(){
     let all_majors = [];
     let i = 1;
+
     for (const key in all_data){
         all_majors.push({id: i, major: key})
     }
+
+    all_majors.sort( function( a, b ) {
+        a = a.major.toLowerCase();
+        b = b.major.toLowerCase();
+    
+        return a < b ? -1 : a > b ? 1 : 0;
+    });
     return all_majors;
 }
