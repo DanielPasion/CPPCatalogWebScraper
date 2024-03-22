@@ -76,7 +76,7 @@ for term in df.values:
                 coreq = string_split[i] + " " + sanitzied_course_number
 
                 #Checking if it is a current course and not an old course
-                if coreq in list_of_courses and coreq not in course_and_coreqs[course]:
+                if coreq in list_of_courses and coreq not in course_and_coreqs[course] and coreq != course:
                     previous_coreq_array = course_and_coreqs[course]
                     previous_coreq_array.append(coreq)
                     course_and_coreqs[course] = previous_coreq_array
